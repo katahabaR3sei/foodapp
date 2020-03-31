@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>飲食店最強クチコミキュレーションサイト</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <div class="container">
+    <div class="row">
+      <div ="col-lg-5">
+        <%= link_to "Bon appetit!!", root_path %>
+      </div>
+      <div ="col-lg-1">
+        <%= link_to "店舗一覧", "#"  %>
+      </div> 
+      <div ="col-lg-1">
+        <%= link_to "店舗検索", "#"  %>
+      </div>   
+      <div ="col-lg-1">
+        <%= link_to "店舗投稿", "#"  %>
+      </div>
+      <div ="col-lg-1">
+        <%= link_to "クチコミランキング", "#" %>
+      </div>  
+      <div ="col-lg-1">
+        <%= link_to "新規登録", new_user_path %>
+      </div>
+      <div ="col-lg-1">  
+        <%= link_to "ログイン", login_path %>
+      </div>  
+      <div ="col-lg-1">
+        <%= link_to "ログアウト", "#" %>
+      </div> 
+    </div>
+      <body>
+        <%= render partial: 'layouts/flash' %>
+        <%= yield %>
+      </body>
+    <div class="row">
+      <div ="col-lg-12">
+        ©️ Food Mania
+      </div> 
+    </div>
+  </div> 
+</html>

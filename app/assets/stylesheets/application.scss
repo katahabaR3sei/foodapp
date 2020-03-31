@@ -1,0 +1,33 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+ 
+ body {
+  width:1380px;
+  height:800px;
+  background-color: white;
+  font-family: unset;
+}
+
+
+
+
+
+.footer-list {
+ text-align: center;
+ display: block;
+ clear: both;
+ border-top: 1px solid black;
+ padding-top: 20px;
+}
+
+
+.alert {
+  color:white;
+  clear: both;
+  opacity:0.5;
+  font-size: 25px;
+  display: block;
+  background-color:tomato;
+  text-align: center;
+}
