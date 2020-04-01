@@ -2,25 +2,32 @@
 @import "bootstrap";
 
  
- body {
-  width:1380px;
-  height:800px;
-  background-color: white;
-  font-family: unset;
+.navbar-brand {
+  font-size: 50px;
 }
 
+.img-box {
+  position: relative;
+  width:100%;
+}
 
+.img-box p {
+  position: absolute;
+  top:10%;
+  left:10%;
+  font-weight: bold;
+  font-size: 200px;
+  color: white;
+  opacity: 0.7;
+}
 
-
-
-.footer-list {
+.footer{
  text-align: center;
  display: block;
  clear: both;
  border-top: 1px solid black;
  padding-top: 20px;
 }
-
 
 .alert {
   color:white;
@@ -30,4 +37,16 @@
   display: block;
   background-color:tomato;
   text-align: center;
+}
+
+.btn {
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 50px;
+}
+
+.description {
+  height: 400px;
 }

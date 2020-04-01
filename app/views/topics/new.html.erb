@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row"> 
+    <div class="col-md-offset-4 col-md-4 users-new-container">
+      <h3 class="text-center">おすすめのお店を紹介してね！！</h3>
+      <%= form_for @topic do |f| %>
+        <div class="form-group">
+          <%= f.label :"お店の名前", class:"text-white" %>
+          <%= f.text_field :store_name, class:"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :"お店の写真", class:"text-white" %>
+          <%= f.file_field :image, :size=>"10x20"%>
+        </div>
+        <div class="form-group">
+          <%= f.label :"キャッチコピー", class:"text-white" %>
+          <%= f.text_field :title, class:"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :"料理ジャンル", class:"text-white" %>
+          <%= f.select:genre, [["イタリアン","イタリアン"],["中華","中華"],["和食","和食"],["フレンチ","フレンチ"],["カフェ＆スイーツ","カフェ＆スイーツ"],["ステーキ","ステーキ"]],class:"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :"お店の説明", class:"text-white" %>
+          <%= f.text_area :description, class:"form-control", :size=>"70x10"%>
+        </div>
+        <%= f.submit "登録する！", class:"btn btn-success" %>
+      <% end %>
+    </div>  
+  </div>
+</div>

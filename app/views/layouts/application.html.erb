@@ -4,45 +4,37 @@
     <title>飲食店最強クチコミキュレーションサイト</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <div class="container">
-    <div class="row">
-      <div ="col-lg-5">
-        <%= link_to "Bon appetit!!", root_path %>
-      </div>
-      <div ="col-lg-1">
-        <%= link_to "店舗一覧", "#"  %>
-      </div> 
-      <div ="col-lg-1">
-        <%= link_to "店舗検索", "#"  %>
-      </div>   
-      <div ="col-lg-1">
-        <%= link_to "店舗投稿", "#"  %>
-      </div>
-      <div ="col-lg-1">
-        <%= link_to "クチコミランキング", "#" %>
-      </div>  
-      <div ="col-lg-1">
-        <%= link_to "新規登録", new_user_path %>
-      </div>
-      <div ="col-lg-1">  
-        <%= link_to "ログイン", login_path %>
-      </div>  
-      <div ="col-lg-1">
-        <%= link_to "ログアウト", "#" %>
-      </div> 
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to "Bon appetit!!", root_path, class: "navbar-brand" %>
     </div>
+    <div class="collapse navbar-collapse" id="nav_target">
+      <ul class="nav navbar-nav navbar-right">
+      <% if logged_in? %>
+        <li><%= link_to "店舗一覧", topics_path, class:"btn btn-default" %></li>
+        <li><%= link_to "店舗検索", "#", class:"btn btn-default" %></li>
+        <li><%= link_to "店舗投稿", new_topic_path, class:"btn btn-default" %></li>
+        <li><%= link_to "クチコミランキング", "#", class:"btn btn-default" %></li>
+        <li><%= link_to "ログアウト", logout_path, method: :delete, class:"btn btn-danger" %></li>
+      <% else %> 
+        <li><%= link_to "新規登録", new_user_path, class:"btn btn-success" %></li>
+        <li><%= link_to "ログイン", login_path, class:"btn btn-warning" %></li>
+      <% end %>  
+      </ul>
+    </div>
+  </div>
+</nav>
       <body>
         <%= render partial: 'layouts/flash' %>
         <%= yield %>
       </body>
-    <div class="row">
-      <div ="col-lg-12">
-        ©️ Food Mania
+      <div class="footer">
+        <h2>©️ Food Mania</h2>
       </div> 
     </div>
   </div> 

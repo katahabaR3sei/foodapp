@@ -12,5 +12,7 @@ class User < ApplicationRecord
                        format:{with:VALID_PASSWORD_REGEX}
              
   has_secure_password 
-  validates :mail, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+
+  has_many :topics
 end
