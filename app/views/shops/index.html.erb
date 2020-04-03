@@ -1,30 +1,30 @@
 <div class="container">
   <div class="row"> 
     <h3 class="text-center">みんなの選んだお店一覧</h3>
-      <% @topics.each do |topic| %>
+      <% @shops.each do |shop| %>
         <div class="row"> 
           <div class="col-md-7 col-md-offset-3 bg-success text-center ">
-           <%= topic.store_name %>
+           <%= shop.name %>
           </div> 
         </div>  
         <div class="row"> 
           <div class="col-md-7 col-md-offset-3">
-            <%= image_tag topic.image.url, class:"img-responsive center-block"%>
+            <%= image_tag shop.image.url, class:"img-responsive center-block"%>
           </div>
         </div>
         <div class="row">
           <div class="col-md-3 col-md-offset-3 bg-primary">
-           <%= topic.title %>
+           <%= shop.title %>
           </div>
         </div>  
         <div class="row">
           <div class="col-md-3 col-md-offset-3 bg-danger">
-            <%= topic.genre%>
+            <%= shop.genre%>
           </div>
         </div>
         <div class="row">
           <div class="col-md-7 col-md-offset-3 bg-warning">
-            <%= topic.description%>
+            <%= shop.description%>
           </div>
         </div>
       <% end %>    

@@ -16,9 +16,9 @@
     <div class="collapse navbar-collapse" id="nav_target">
       <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
-        <li><%= link_to "店舗一覧", topics_path, class:"btn btn-default" %></li>
+        <li><%= link_to "店舗一覧", shops_path, class:"btn btn-default" %></li>
         <li><%= link_to "店舗検索", "#", class:"btn btn-default" %></li>
-        <li><%= link_to "店舗投稿", new_topic_path, class:"btn btn-default" %></li>
+        <li><%= link_to "店舗投稿", new_shop_path, class:"btn btn-default" %></li>
         <li><%= link_to "クチコミランキング", "#", class:"btn btn-default" %></li>
         <li><%= link_to "ログアウト", logout_path, method: :delete, class:"btn btn-danger" %></li>
       <% else %> 

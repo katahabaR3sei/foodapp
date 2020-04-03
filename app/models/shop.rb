@@ -1,4 +1,4 @@
-class Topic < ApplicationRecord
+class Shop < ApplicationRecord
   validates :user_id, presence: true
   validates :image, presence: true
   validates :title, presence: true
