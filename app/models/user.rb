@@ -10,7 +10,8 @@ class User < ApplicationRecord
   validates :password, presence:true, 
                        length: {minimum: 8, maximum: 32,},
                        format:{with:VALID_PASSWORD_REGEX}
-             
+  validates :sex, presence:true
+  validates :age, presence:true 
   has_secure_password 
   validates :email, presence: true, uniqueness: true
 

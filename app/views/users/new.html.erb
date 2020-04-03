@@ -12,6 +12,14 @@
           <%= f.text_field :email, class:"form-control" %>
         </div>
         <div class="form-group">
+          <%= f.label :"性別", class:"text-white" %>
+          <%= f.select :sex,[["男性","男性"],["女性","女性"]], class:"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :"年齢", class:"text-white" %>
+          <%= f.select :age,[["10代","10代"],["20代","20代"],["30代","30代"],["40代","40代"],["50代","50代"],["60代","60代"],["70代","70代"],["80代","80代"]], class:"form-control" %>
+        </div>
+        <div class="form-group">
           <%= f.label :"パスワード入力", class:"text-white" %>
           <%= f.password_field :password, class:"form-control" %>
         </div>
