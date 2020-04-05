@@ -15,6 +15,12 @@
           <%= f.label :"キャッチコピー", class:"text-white" %>
           <%= f.text_field :title, class:"form-control" %>
         </div>
+        <%= f.fields_for :genres do |i| %>
+          <div class="form-group">
+            <%= i.label :"料理ジャンル", class:"text-white" %>
+            <%= i.select :name,[["イタリアン","イタリアン"],["和食","和食"],["フレンチ","フレンチ"],["中華","中華"],["ステーキ","ステーキ"],["カフェ＆スイーツ","カフェ＆スイーツ"],["韓国料理","韓国料理"]] ,class:"form-control" %>
+          </div>
+        <% end %>
         <div class="form-group">
           <%= f.label :"お店の説明", class:"text-white" %>
           <%= f.text_area :description, class:"form-control", :size=>"70x10"%>
