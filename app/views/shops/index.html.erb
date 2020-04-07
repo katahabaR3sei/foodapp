@@ -1,33 +1,37 @@
 <div class="container">
-  <div class="row"> 
-    <h3 class="text-center">みんなの選んだお店一覧</h3>
-      <% @shops.each do |shop| %>
-        <div class="row"> 
-          <div class="col-md-7 col-md-offset-3 bg-success text-center ">
-           <%= shop.name %>
-          </div> 
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center bg-danger">みんなの選んだお店一覧</h1>
+    </div>
+  </div>
+</div>  
+<div class="container">
+  <div class="row row-eq-height"> 
+    <% @shops.each do |shop| %>
+      <div class="col-md-3">
+        <%= image_tag shop.image.url, class:"img-responsive center-block"%>
+      </div>
+      <div class="col-md-9 row-eq-height">
+        <div class="bg-success col-md-4">
+         <p>店舗名</p>
+          <%= shop.name %>
+        </div>
+        <div class="bg-info col-md-4">
+         <p>キャッチコピー</p>  
+          <%= shop.title %>
         </div>  
-        <div class="row"> 
-          <div class="col-md-7 col-md-offset-3">
-            <%= image_tag shop.image.url, class:"img-responsive center-block"%>
-          </div>
+          <% @genres.each do |genre| %>
+            <div class="bg-danger col-md-4"> 
+             <p>料理ジャンル</p>   
+              <%= genre.name%>
+            </div>  
+          <% end %>
+        <div class="bg-warning">
+         <p>店舗説明</p>
+          <%= shop.description%>
         </div>
-        <div class="row">
-          <div class="col-md-3 col-md-offset-3 bg-primary">
-           <%= shop.title %>
-          </div>
-        </div>  
-        <div class="row">
-          <div class="col-md-3 col-md-offset-3 bg-danger">
-            <%= shop.genre.name%>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-7 col-md-offset-3 bg-warning">
-            <%= shop.description%>
-          </div>
-        </div>
-      <% end %>    
+      </div>  
+    <% end %>    
   </div>      
 </div>
       
