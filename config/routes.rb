@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'posts/new'
   get 'topics/new'
   get 'sessions/new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :shops
+  resources :posts
   get     'login',   to: 'sessions#new'
   post    'login',   to: 'sessions#create'
   delete  'logout',  to: 'sessions#destroy'

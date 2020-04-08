@@ -15,10 +15,14 @@ class ShopsController < ApplicationController
     end
   end
 
-   def index
-    @shops = Shop.all
-    @genres = Genre.all
-   end
+  def show
+    @shop = Shop.find(params[:id])
+  end
+
+  def index
+  @shops = Shop.all
+  @genres = Genre.all
+  end
 
   private
   def shop_params
