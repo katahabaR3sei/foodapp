@@ -2,13 +2,31 @@
   <div class="row">
     <div class="col-md-12">
       <h1 class="text-center bg-danger">
-       店舗詳細
+       店舗クチコミ一覧
       </h1>
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-6">
       <%= image_tag @shop.image.url, class:"img-responsive center-block"%>
-    </div>  
+    </div>
+    <div class="col-md-6">
+      <%= @shop.name%>
+    </div>
+    <div class="col-md-6">
+      <%= @shop.genre.name%>
+    </div>
+    <div class="col-md-6">
+      <%= @shop.title%>
+    </div>
+    <div class="col-md-6">
+      <%= @shop.description %>
+    </div>
+    <div class="col-md-6 bg-primary">
+      <クチコミ件数>
+    </div>
+    <div class="col-md-6 bg-primary">
+      <クチコミ平均点>
+    </div>
   </div>
 </div>  
