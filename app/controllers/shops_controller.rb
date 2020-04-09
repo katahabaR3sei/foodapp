@@ -1,7 +1,6 @@
 class ShopsController < ApplicationController
   def new
     @shop = Shop.new
-    @shop.build_genre
   end
 
   def create
@@ -21,11 +20,10 @@ class ShopsController < ApplicationController
 
   def index
   @shops = Shop.all
-  @genres = Genre.all
   end
 
   private
   def shop_params
-    params.require(:shop).permit(:name, :image, :title, :description, genre_attributes:[:id,:name])
+    params.require(:shop).permit(:name, :image, :title, :description, :genre_id)
   end
 end

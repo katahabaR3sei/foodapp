@@ -6,8 +6,7 @@ class Shop < ApplicationRecord
   validates :name, presence: true
 
   belongs_to :user
-  has_one :genre
+  belongs_to :genre
   has_many :posts
-  accepts_nested_attributes_for :genre
   mount_uploader :image, ImageUploader
 end
