@@ -9,3 +9,8 @@ require "csv"
 CSV.foreach('db/genres.csv') do |row|
   Genre.create(:name => row[0])
 end
+
+require "csv"
+CSV.foreach('db/priceranges.csv') do |row|
+  Pricerange.create(:price => row[0])
+end

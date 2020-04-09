@@ -1,0 +1,2 @@
+class Pricerange < ApplicationRecord
+end
