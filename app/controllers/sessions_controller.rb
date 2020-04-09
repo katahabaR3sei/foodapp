@@ -8,14 +8,14 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to root_path, notice:"ログインしました"
     else
-      flash.now[:danger] = "ログインに失敗しました"
+      flash.now[:alert] = "ログインに失敗しました"
       render :new
     end
   end
 
   def destroy
     log_out
-    redirect_to root_path, notice:"ログアウトしました"
+    redirect_to root_path, alert:"ログアウトしました"
   end
  
   private

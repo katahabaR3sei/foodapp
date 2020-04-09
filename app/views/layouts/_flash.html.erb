@@ -1,8 +1,0 @@
-<% flash.each do |key, value| %>
-  <%= content_tag(:p, value, class: "alert alert-#{key}") %>
-<% end %>
-<script>
-  $(function(){
-    $(".alert").fadeOut(2000);
-  });
-</script>

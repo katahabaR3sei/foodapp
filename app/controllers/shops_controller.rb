@@ -6,10 +6,9 @@ class ShopsController < ApplicationController
   def create
     @shop = current_user.shops.new(shop_params)
     if @shop.save
-      flash[:danger] = "投稿ありがとうございます！"
-      redirect_to shops_path
+      redirect_to shops_path, notice:"投稿ありがとうございます！"
     else
-      flash[:danger] = "投稿失敗・・・"
+      flash[:alert] = "投稿失敗・・・"
       render :new
     end
   end

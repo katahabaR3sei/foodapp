@@ -33,7 +33,16 @@
   </div>
 </nav>
       <body>
-        <%= render partial: 'layouts/flash' %>
+      <div class= "notifications">
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+        <% end %>
+      </div>  
+      <script>
+        $(function(){
+          $(".alert").fadeOut(3000);
+        });
+      </script>
         <%= yield %>
       </body>
       <div class="footer">
