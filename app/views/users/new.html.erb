@@ -1,7 +1,7 @@
-<div class="container">
+<div class="background-image-container">
   <div class="row"> 
     <div class="col-md-offset-4 col-md-4 users-new-container">
-      <h3 class="text-center">新規登録</h3>
+      <h3 class="text-center text-white">新規登録</h3>
       <%= form_for @user do |f| %>
         <div class="form-group">
           <%= f.label :"名前", class:"text-white" %>
@@ -27,9 +27,9 @@
           <%= f.label :"パスワード確認", class:"text-white" %>
           <%= f.password_field :password_confirmation, class:"form-control" %>
         </div>
-        <%= f.submit "登録", class:"btn btn-success" %>
+        <%= f.submit "登録", class:"btn btn-success form-control" %>
       <% end %>
-      <%= link_to "登録済みの方はこちらからログイン画面へ！", login_path %>
+      <%= link_to "登録済みの方はこちらからログイン画面へ！", login_path, class: "text-white" %>
     </div>  
   </div>
 </div>

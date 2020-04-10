@@ -1,21 +1,21 @@
-<div class="container">
+<div class="background-image-container">
   <div class="row"> 
     <div class="col-md-offset-4 col-md-4 users-new-container">
-      <h3 class="text-center">ログインページ</h3>
+      <h3 class="text-center text-white">ログインページ</h3>
         <%= form_for :session, url: login_path do |f| %>
           <div class="form-group">
-            <%= f.label :"Email", class:"text" %>
+            <%= f.label :"Email", class:"text-white" %>
             <%= f.text_field :email, class:"form-control" %>
           </div>
           <div class="form-group">
-            <%= f.label :"パスワード入力", class:"text" %>
+            <%= f.label :"パスワード入力", class:"text-white" %>
             <%= f.text_field :password, class:"form-control" %>
           </div>
           <div class="form-group">
-            <%= f.label :"パスワード確認", class:"text" %>
+            <%= f.label :"パスワード確認", class:"text-white" %>
             <%= f.text_field :password, class:"form-control" %>
           </div>
-          <%= f.submit "ログイン", class:"btn btn-success" %>
+          <%= f.submit "ログイン", class:"btn btn-success form-control" %>
         <% end %>
     </div>    
   </div>
