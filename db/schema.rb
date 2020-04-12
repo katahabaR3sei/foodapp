@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2020_04_12_085833) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "genre_id"
     t.integer "pricerange_id"
-    t.integer "addresse_id"
+    t.integer "address_id"
   end
 
   create_table "users", force: :cascade do |t|

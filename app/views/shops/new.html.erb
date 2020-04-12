@@ -24,6 +24,10 @@
           <%= f.collection_select :pricerange_id, Pricerange.all, :id, :price, :prompt => "選択してください", class:"form-control"%>
         </div>
         <div class="form-group">
+          <%= f.label :"都道府県", class:"text-white" %>
+          <%= f.collection_select :address_id, Address.all, :id, :prefectures, :prompt => "選択してください", class:"form-control"%>
+        </div>
+        <div class="form-group">
           <%= f.label :"お店の説明", class:"text-white" %>
           <%= f.text_area :description, class:"form-control", :size=>"50x7"%>
         </div>
