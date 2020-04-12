@@ -14,3 +14,8 @@ require "csv"
 CSV.foreach('db/priceranges.csv') do |row|
   Pricerange.create(:price => row[0])
 end
+
+require "csv"
+CSV.foreach("db/prefectures.csv") do |row|
+  Address.create(:prefectures => row[0])
+end
