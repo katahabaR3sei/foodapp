@@ -20,6 +20,10 @@
           <%= f.select :age,[["10代","10代"],["20代","20代"],["30代","30代"],["40代","40代"],["50代","50代"],["60代","60代"],["70代","70代"],["80代","80代"]], class:"form-control" %>
         </div>
         <div class="form-group">
+          <%= f.label :"現在地", class:"text-white" %>
+          <%= f.select :,[["10代","10代"],["20代","20代"],["30代","30代"],["40代","40代"],["50代","50代"],["60代","60代"],["70代","70代"],["80代","80代"]], class:"form-control" %>
+        </div>
+        <div class="form-group">
           <%= f.label :"パスワード入力", class:"text-white" %>
           <%= f.password_field :password, class:"form-control" %>
         </div>

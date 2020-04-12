@@ -17,4 +17,5 @@ class User < ApplicationRecord
 
   has_many :shops
   has_many :posts
+  belongs_to :address
 end

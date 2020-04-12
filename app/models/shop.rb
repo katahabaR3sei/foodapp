@@ -9,5 +9,6 @@ class Shop < ApplicationRecord
   belongs_to :genre
   belongs_to :pricerange
   has_many :posts
+  belongs_to :address
   mount_uploader :image, ImageUploader
 end
