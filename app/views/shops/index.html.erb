@@ -25,6 +25,18 @@
           <p>料理ジャンル</p>   
             <%= shop.genre.name%>
           </div>  
+          <div class="bg-success col-md-4 border" >
+          <p>平均単価</p>
+            <%= shop.pricerange.price %>
+          </div>
+          <div class="bg-info col-md-4 border">
+          <p>都道府県</p>  
+            <%= shop.address.prefectures %>
+          </div>  
+          <div class="bg-danger col-md-4 border"> 
+          <p>☆総合点数</p>   
+            <%= "#"%>
+          </div>  
           <div class="col-md-12 bg-warning border">
           <p>店舗説明</p>
             <%= shop.description%>
