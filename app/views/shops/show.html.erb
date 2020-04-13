@@ -2,52 +2,67 @@
   <div class="row">
     <div class="col-md-12">
       <h1 class="text-center bg-danger">
-       店舗詳細
+       店舗クチコミ
       </h1>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6">
+  <div class="row row-eq-height">
+    <div class="col-md-3">
       <%= image_tag @shop.image.url, class:"img-responsive center-block"%>
     </div>
-    <div class="col-md-6">
-      <%= @shop.name%>
-    </div>
-    <div class="col-md-6">
-      <%= @shop.genre.name%>
-    </div>
-    <div class="col-md-6">
-      <%= @shop.title%>
-    </div>
-    <div class="col-md-6">
-      <%= @shop.description %>
-    </div>
-    <div class="col-md-6 bg-primary">
+    <div class="col-md-9">
+      <div class="col-md-2 text-center ">
+        店舗名
+      </div>
+      <div class="col-md-10 text-center">
+        <%= @shop.name%>
+      </div>
+      <div class="col-md-2 text-center">
+        料理ジャンル
+      </div>
+      <div class="col-md-10 text-center">
+        <%= @shop.genre.name%>
+      </div>
+      <div class="col-md-2 text-center">
+        キャッチコピー
+      </div>
+      <div class="col-md-10 text-center">
+        <%= @shop.title%>
+      </div>
+      <div class="col-md-12 bg-primary">
       <クチコミ件数>
-    </div>
-    <div class="col-md-6 bg-primary">
-      <クチコミ平均点>
-    </div>
-    <div class="col-md-6">
-      <%= link_to "口コミを投稿する", new_shop_post_path(@shop) %>
-    </div>
-      <% @shop.posts.each do |p|%>
-        <h4 class="mb-3">評価：<%= p.rate %>点 | <%= p.title %></h4>
-
-          <!--星評価-->
-         <div id="star-rate-<%= p.id %>"></div>
-          <script>
-          $('#star-rate-<%= p.id %>').raty({
-            size: 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            starHalf: '<%= asset_path('star-half.png') %>',
-            half: true,
-            readOnly: true,
-            score: <%= p.rate %>,
-          });
-          </script>  
-          <%= p.description%>  
-      <% end %>  
+      </div>
+      <div class="col-md-12 bg-primary">
+        <クチコミ平均点>
+      </div>
+    </div>  
+  </div>
+  <div class="col-md-12">
+    <%= @shop.description %>
+  </div>  
+</div>
+  <% @shop.posts.each do |p|%>
+  <div class="col-md-6">  
+    <h4 class="mb-3">評価：<%= p.rate %>点 | <%= p.title %></h4>
+      <!--星評価-->
+     <div id="star-rate-<%= p.id %>"></div>
+      <script>
+      $('#star-rate-<%= p.id %>').raty({
+        size: 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        half: true,
+        readOnly: true,
+        score: <%= p.rate %>,
+      });
+      </script>  
+      <%= p.taste%>  
+      <%= p.atmosphere%>
+      <%= p.service%>
+    <% end %> 
+  </div>    
+  <div class="col-md-12">
+    <%= link_to "口コミを投稿する", new_shop_post_path(@shop) %>
   </div>
 </div>  
