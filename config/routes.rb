@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'posts/new'
-  get 'topics/new'
   get 'sessions/new'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "pages#top"
