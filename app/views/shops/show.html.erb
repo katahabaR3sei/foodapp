@@ -31,8 +31,13 @@
     <div class="col-md-6">
       <%= link_to "口コミを投稿する", new_shop_post_path(@shop) %>
     </div>
-    <div class="col-md-6">
-    <%=  %>
-  </div>
+      <% @shop.posts.each do |p|%>
+        <div class="col-md-6">
+          <%= p.title%>
+        </div> 
+        <div class="col-md-6">
+          <%= p.description%>
+        </div>  
+      <% end %>  
   </div>
 </div>  

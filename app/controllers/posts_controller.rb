@@ -9,10 +9,10 @@ class PostsController < ApplicationController
     @shop = Shop.find(params[:shop_id])
     @post = @shop.posts.new(post_params)
     if @post.save
-      redirect_to shop_path, notice:"投稿ありがとうございます！"
+      redirect_to shop_path(@shop), notice:"投稿ありがとうございます！"
     else
       flash[alert] = "投稿失敗・・・"
-      render new_post_path(@post)
+      redirect_to new_shop_post_path(@shop)
     end
   end
 
