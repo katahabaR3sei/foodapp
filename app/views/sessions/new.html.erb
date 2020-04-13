@@ -5,15 +5,15 @@
         <%= form_for :session, url: login_path do |f| %>
           <div class="form-group">
             <%= f.label :"Email", class:"text-white" %>
-            <%= f.text_field :email, class:"form-control" %>
+            <%= f.text_field :email, class:"form-control", placeholder:"メールアドレスを入力" %>
           </div>
           <div class="form-group">
             <%= f.label :"パスワード入力", class:"text-white" %>
-            <%= f.text_field :password, class:"form-control" %>
+            <%= f.text_field :password, class:"form-control", placeholder:"パスワード入力" %>
           </div>
           <div class="form-group">
             <%= f.label :"パスワード確認", class:"text-white" %>
-            <%= f.text_field :password, class:"form-control" %>
+            <%= f.text_field :password, class:"form-control", placeholder:"パスワード確認用" %>
           </div>
           <%= f.submit "ログイン", class:"btn btn-success form-control" %>
         <% end %>
