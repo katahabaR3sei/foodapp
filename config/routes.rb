@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   root "pages#top"
 
   resources :users
-  resources :shops
-  resources :posts
+  resources :shops do
+    resources :posts
+  end
   get     'login',   to: 'sessions#new'
   post    'login',   to: 'sessions#create'
   delete  'logout',  to: 'sessions#destroy'
