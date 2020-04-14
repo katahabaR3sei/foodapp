@@ -12,10 +12,12 @@ class User < ApplicationRecord
                        format:{with:VALID_PASSWORD_REGEX}
   validates :sex, presence:true
   validates :age, presence:true 
+  validates :address_id, presence:true
   has_secure_password 
   validates :email, presence: true, uniqueness: true
 
   has_many :shops
   has_many :posts
   belongs_to :address
+  mount_uploader :image, ImageUploader
 end
