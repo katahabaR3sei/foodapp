@@ -24,11 +24,22 @@ class ShopsController < ApplicationController
   def update
     @shop = Shop.find(params[:id])
     @shop.update(shop_params)
-    redirect_to shop_path(@shop)
+    redirect_to shop_path(@shop), notice:"編集が完了しました！"
   end
 
   def index
   @shops = Shop.all.order(id: "asc")
+  end
+
+  def destroy
+    shop = Shop.find(params[:id])
+    if shop.user_id == current_user.id
+      shop.destroy
+      redirect_to shops_path, notice:"削除されました！"
+    else
+      flash[:alert] = "削除できませんでした！"
+      render :show
+    end
   end
 
   private
