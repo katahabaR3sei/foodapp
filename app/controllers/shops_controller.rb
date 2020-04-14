@@ -17,8 +17,18 @@ class ShopsController < ApplicationController
     @shop = Shop.find(params[:id])
   end
 
+  def edit
+    @shop = Shop.find(params[:id])
+  end
+
+  def update
+    @shop = Shop.find(params[:id])
+    @shop.update(shop_params)
+    redirect_to shop_path(@shop)
+  end
+
   def index
-  @shops = Shop.all
+  @shops = Shop.all.order(id: "asc")
   end
 
   private
