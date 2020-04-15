@@ -16,6 +16,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @shop = Shop.find(params[:id])
+    @post = @shop.posts.find(params[:shop_id])
+    @user = current_user
+  end
+
+  def update
+    @shop = Shop.find(params[:id])
+    @post = @shop.posts.update
+    redirect_to shop_path(@shop), notice:"クチコミを編集しました"
+  end
+
+  def destroy
+  end
+  
+
   private
   def post_params
     params.require(:post).permit(:title, :taste, :atmosphere, :service, :shop_id, :user_id, :rate)

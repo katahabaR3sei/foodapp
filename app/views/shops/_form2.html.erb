@@ -1,0 +1,91 @@
+<div class="col-md-3">
+      <%= image_tag @shop.image.url, class:"img-responsive center-block"%>
+    </div>
+    <div class="col-md-9 post-text">
+      <div class="col-md-2 text-center post-parts">
+        店舗名
+      </div>
+      <div class="col-md-10 text-center post-parts">
+        <%= @shop.name%>
+      </div>
+      <div class="col-md-2 text-center post-parts">
+        料理ジャンル
+      </div>
+      <div class="col-md-10 text-center post-parts">
+        <%= @shop.genre.name%>
+      </div>
+      <div class="col-md-2 text-center post-parts">
+        キャッチコピー
+      </div>
+      <div class="col-md-10 text-center post-parts">
+        <%= @shop.title%>
+      </div>
+      <div class="col-md-2 text-center post-parts">
+        地域
+      </div>
+      <div class="col-md-10 text-center post-parts">
+        <%= @shop.address.prefectures%>
+      </div>
+      <div class="col-md-2 text-center post-parts">
+        平均単価
+      </div>
+      <div class="col-md-10 text-center post-parts">
+        <%= @shop.pricerange.price%>
+      </div>
+      <div class="col-md-12 bg-primary post-parts">
+      <クチコミ件数>
+      </div>
+      <div class="col-md-12 bg-primary post-parts">
+        <クチコミ平均点>
+      </div>
+    </div>  
+  </div>
+  <div class="col-md-12 description-text">
+    <%= @shop.description %>
+  </div>  
+</div>
+  <div class="col-md-6 text-center h2">
+    みんなのクチコミ
+  </div> 
+  <% @shop.posts.each do |p|%>
+    <div class="col-md-12">  
+      <h4 class="mb-4">評価：<%= p.rate %>点 | <%= p.title %></h4>
+        <!--星評価-->
+      <div id="star-rate-<%= p.id %>"></div>
+        <script>
+        $('#star-rate-<%= p.id %>').raty({
+          size: 36,
+          starOff:  '<%= asset_path('star-off.png') %>',
+          starOn : '<%= asset_path('star-on.png') %>',
+          starHalf: '<%= asset_path('star-half.png') %>',
+          half: true,
+          readOnly: true,
+          score: <%= p.rate %>,
+        });
+        </script>
+      <div class="col-md-12">
+        料理やメニューに関して
+      </div> 
+      <div class="col-md-12"> 
+        <%= p.taste%>  
+      </div>
+      <div class="col-md-12">
+        店内の雰囲気や装飾に関して
+      </div> 
+      <div class="col-md-12"> 
+        <%= p.atmosphere%>
+      </div>
+      <div class="col-md-12">
+        接客やその他サービスに関して
+      </div> 
+      <div class="col-md-12">   
+        <%= p.service%>
+      </div>  
+      <div class="col-md-6">   
+        <%= link_to "クチコミ編集", edit_shop_post_path([@post,@shop])%>
+      </div> 
+      <div class="col-md-6">   
+        <%= link_to "クチコミ削除", shop_post_path([@post,@shop]), method: :delete%>
+      </div> 
+    </div>  
+  <% end %> 
