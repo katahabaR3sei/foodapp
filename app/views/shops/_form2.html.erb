@@ -82,10 +82,10 @@
         <%= p.service%>
       </div>  
       <div class="col-md-6">   
-        <%= link_to "クチコミ編集", edit_shop_post_path([@post,@shop])%>
+        <%= link_to "クチコミ編集", edit_shop_post_path(p)%>
       </div> 
       <div class="col-md-6">   
-        <%= link_to "クチコミ削除", shop_post_path([@post,@shop]), method: :delete%>
+        <%= link_to "クチコミ削除", shop_post_path(p), method: :delete%>
       </div> 
     </div>  
   <% end %> 
