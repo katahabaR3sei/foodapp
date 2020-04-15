@@ -98,10 +98,11 @@
 }
 
 .description-text {
-  font-size: medium;
+  font-size: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 .border{
   border: 1px solid black;
 }
@@ -133,3 +134,28 @@
   width:100%;
 }
 
+.img {
+  display: block;
+  height: auto;
+  max-width: 25%;
+}
+
+.posts-show {
+  letter-spacing: 1em;
+  font-weight: bold;
+}
+
+.balloon4 {
+  position: relative;
+  margin: 2em 0 2em 40px;
+  padding: 15px;
+  background: rgb(255, 240, 198);
+  border-radius: 30px;
+  line-height: 2em;
+}
+
+
+.balloon4 p {
+  margin: 0; 
+  padding: 0;
+}
