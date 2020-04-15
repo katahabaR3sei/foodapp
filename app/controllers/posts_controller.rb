@@ -25,12 +25,25 @@ class PostsController < ApplicationController
   def update
     @shop = Shop.find(params[:shop_id])
     @post = @shop.posts.find(params[:id])
-    @post.update(post_params)
-    redirect_to shop_path(@shop), notice:"クチコミを編集しました!"
+    if @post.user_id == current_user.id
+      @post.update(post_params)
+      redirect_to shop_path(@shop), notice:"クチコミを編集しました!"
+    else
+      flash[:alert] = "権限がありません！"
+      render :show
+    end  
   end
 
   def destroy
-
+    shop = Shop.find(params[:id])
+    post = shop.posts.find(params[:shop_id])
+    if post.user_id == current_user.id
+      post.destroy
+      redirect_to shop_path(shop), notice:"クチコミを削除しました!"
+    else  
+      flash[:alert] = "権限がありません！"
+      render :show
+    end   
   end
   
 

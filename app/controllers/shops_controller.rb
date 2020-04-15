@@ -13,6 +13,10 @@ class ShopsController < ApplicationController
     end
   end
 
+  def index
+    @shops = Shop.all.order(id: "asc")
+    end
+
   def show
     @shop = Shop.find(params[:id])
   end
@@ -23,12 +27,13 @@ class ShopsController < ApplicationController
 
   def update
     @shop = Shop.find(params[:id])
-    @shop.update(shop_params)
-    redirect_to shop_path(@shop), notice:"編集が完了しました！"
-  end
-
-  def index
-  @shops = Shop.all.order(id: "asc")
+    if shop.user_id == current_user.id
+      @shop.update(shop_params)
+      redirect_to shop_path(@shop), notice:"編集が完了しました！"
+    else
+      flash[:alert] = "権限がありません！"
+      render :show
+    end  
   end
 
   def destroy
@@ -37,7 +42,7 @@ class ShopsController < ApplicationController
       shop.destroy
       redirect_to shops_path, notice:"削除されました！"
     else
-      flash[:alert] = "削除できませんでした！"
+      flash[:alert] = "権限がありません！"
       render :show
     end
   end
