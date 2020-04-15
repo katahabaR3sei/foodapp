@@ -24,11 +24,13 @@ class PostsController < ApplicationController
 
   def update
     @shop = Shop.find(params[:shop_id])
-    @post = @shop.posts.update(post_params)
+    @post = @shop.posts.find(params[:id])
+    @post.update(post_params)
     redirect_to shop_path(@shop), notice:"クチコミを編集しました!"
   end
 
   def destroy
+
   end
   
 
