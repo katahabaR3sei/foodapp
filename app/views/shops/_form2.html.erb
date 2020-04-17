@@ -86,11 +86,11 @@
           <%= p.service%>
         </div>  
         <% if current_user && current_user.id == p.user.id%>
-          <div class="col-md-3  btn btn-success">   
-            <%= link_to "クチコミ編集", edit_shop_post_path(p)%>
+          <div class="col-md-3">   
+            <%= link_to "クチコミ編集", edit_shop_post_path(p), class:"btn btn-success"%>
           </div> 
-          <div class="col-md-3 col-md-offset-2 btn btn-warning">   
-            <%= link_to "クチコミ削除", shop_post_path(p), method: :delete, data: {confirm: "本当に削除しますか？"} %>
+          <div class="col-md-3 col-md-offset-2">   
+            <%= link_to "クチコミ削除", shop_post_path(p), method: :delete, data: {confirm: "本当に削除しますか？"},  class:"btn btn-warning"%>
           </div> 
         <% else %>
         <% end %>
