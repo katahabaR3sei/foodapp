@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users
   resources :shops do
     resources :posts
+    get :search, on: :collection
   end
   get     'login',   to: 'sessions#new'
   post    'login',   to: 'sessions#create'
