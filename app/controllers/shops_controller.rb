@@ -21,6 +21,7 @@ class ShopsController < ApplicationController
   def show
     @shop = Shop.find(params[:id])    
     @rate = Post.group(:shop_id).average(:rate)
+    @count = Post.group(:shop_id).count(:rate)
   end
 
   def edit
