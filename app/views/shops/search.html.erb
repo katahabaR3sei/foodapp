@@ -1,1 +1,16 @@
-<h1>検索画面</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-center bg-danger">店舗検索</h1>
+    </div> 
+    <div class="col-md-12 text-center"> 
+      <div class="form-group">
+        <%= form_tag(search_shops_path,:method => 'get') do %>
+          <%= text_field_tag :search, "", placeholder:"店舗名を入力" %>
+          <%= submit_tag '検索', :name => nil %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>  
+<%= render "form3"%>
