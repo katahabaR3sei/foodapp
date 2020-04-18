@@ -27,7 +27,7 @@ class ShopsController < ApplicationController
 
   def update
     @shop = Shop.find(params[:id])
-    if shop.user_id == current_user.id
+    if @shop.user_id == current_user.id
       @shop.update(shop_params)
       redirect_to shop_path(@shop), notice:"編集が完了しました！"
     else
