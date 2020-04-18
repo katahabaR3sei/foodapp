@@ -14,11 +14,13 @@ class ShopsController < ApplicationController
   end
 
   def index
-    @shops = Shop.all.order(id: "asc")
-    end
+    @shops = Shop.all.order(id: "asc")  
+    @rate = Post.group(:shop_id).average(:rate)
+  end
 
   def show
-    @shop = Shop.find(params[:id])
+    @shop = Shop.find(params[:id])    
+    @rate = Post.group(:shop_id).average(:rate)
   end
 
   def edit
