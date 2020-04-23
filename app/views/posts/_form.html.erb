@@ -1,0 +1,35 @@
+<%= form_with(model: [@shop, @post]) do |f| %>
+  <div class="form-group">
+    <%= f.label :"タイトル", class:"text-white" %>
+    <%= f.text_field :title, class:"form-control", placeholder:"クチコミのタイトルを入力(15文字以内で入力)" %>
+  </div>
+  <div class="form-group" id="star">
+    <%= f.label :"評価", class:"text-white" %>
+    <%= f.hidden_field :rate, id: :review_star %>
+  </div>
+  <script>
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    scoreName: 'post[rate]',
+    half: true,
+  });
+  </script> 
+  <div class="form-group">
+    <%= f.label :"料理やメニューに関するクチコミ", class:"text-white" %>
+    <%= f.text_area :taste, class:"form-control", :size=>"50x5", placeholder:"料理に関するクチコミ内容を入力(100文字まで)" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :"店内に雰囲気や装飾に関するクチコミ", class:"text-white" %>
+    <%= f.text_area :atmosphere, class:"form-control", :size=>"50x5", placeholder:"店内に関するクチコミ内容を入力(100文字まで)" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :"接客やサービスに関するクチコミ", class:"text-white" %>
+    <%= f.text_area :service, class:"form-control", :size=>"50x5", placeholder:"接客やサービスに関するクチコミ内容を入力(100文字まで)" %>
+  </div>
+    <%= f.hidden_field :shop_id, value: @shop.id %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+  <%= f.submit "登録する！", class:"btn btn-success form-control"  %>
+<% end %>
