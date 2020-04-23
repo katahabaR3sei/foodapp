@@ -10,12 +10,11 @@ CSV.foreach('db/genres.csv') do |row|
   Genre.create(:name => row[0])
 end
 
-
 CSV.foreach('db/priceranges.csv') do |row|
   Pricerange.create(:price => row[0])
 end
 
-
 CSV.foreach("db/prefectures.csv") do |row|
   Address.create(:prefectures => row[0])
 end
+

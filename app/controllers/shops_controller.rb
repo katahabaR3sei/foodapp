@@ -50,6 +50,11 @@ class ShopsController < ApplicationController
     end
   end
 
+  def search
+    @shops = Shop.search(params[:search])
+    @rate = Post.group(:shop_id).average(:rate)
+  end
+  
   private
   def shop_params
     params.require(:shop).permit(:name, :image, :title, :description, :genre_id, :pricerange_id, :address_id)
