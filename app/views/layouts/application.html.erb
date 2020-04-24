@@ -17,14 +17,15 @@
     <div class="collapse navbar-collapse" id="nav_target">
       <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
+        <h4 class="user-name"><%= current_user.name %> 様ようこそ！</h4>
         <li><%= link_to "店舗一覧", shops_path, class:"btn btn-default" %></li>
         <li><%= link_to "店舗検索", search_shops_path, class:"btn btn-default" %></li>
         <li><%= link_to "店舗投稿", new_shop_path, class:"btn btn-default" %></li>
         <li><%= link_to "クチコミランキング", "#", class:"btn btn-default" %></li>
         <li><%= link_to "プロフィール", user_path(current_user), class:"btn btn-default" %></li>
         <li><%= link_to "ログアウト", logout_path, method: :delete, class:"btn btn-danger" %></li>
-        <li><%= current_user.name %> 様</li>
       <% else %> 
+        <h4 class="user-name">ゲスト 様ようこそ！</h4>
         <li><%= link_to "店舗一覧", shops_path, class:"btn btn-default" %></li>
         <li><%= link_to "店舗検索", search_shops_path, class:"btn btn-default" %></li>
         <li><%= link_to "クチコミランキング", "#", class:"btn btn-default" %></li>
