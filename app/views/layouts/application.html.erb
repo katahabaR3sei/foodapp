@@ -26,7 +26,7 @@
         <li><%= current_user.name %> 様</li>
       <% else %> 
         <li><%= link_to "店舗一覧", shops_path, class:"btn btn-default" %></li>
-        <li><%= link_to "店舗検索", "#", class:"btn btn-default" %></li>
+        <li><%= link_to "店舗検索", search_shops_path, class:"btn btn-default" %></li>
         <li><%= link_to "クチコミランキング", "#", class:"btn btn-default" %></li>
         <li><%= link_to "新規登録", new_user_path, class:"btn btn-success" %></li>
         <li><%= link_to "ログイン", login_path, class:"btn btn-warning" %></li>
