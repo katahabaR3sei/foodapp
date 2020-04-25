@@ -16,7 +16,7 @@ class Shop < ApplicationRecord
     if search
       Shop.where(['name LIKE ?', "%#{search}%"])
     else
-      Shop.all
+      Shop.all.order(id: "asc") 
     end
   end
 end
