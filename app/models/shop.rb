@@ -12,11 +12,26 @@ class Shop < ApplicationRecord
   belongs_to :address
   mount_uploader :image, ImageUploader
 
-  def self.search(search)
+  def self.search(search: nil, genre_id: nil, pricerange_id: nil, address_id: nil)
+    result = Shop.all.order(id: "asc") 
+
     if search
-      Shop.where(['name LIKE ?', "%#{search}%"])
-    else
-      Shop.all.order(id: "asc") 
+      result = Shop.where(["name LIKE ?", "%#{search}%"])
     end
+
+    if genre_id
+      result = Genre.find(genre_id).shops
+    end
+
+    if pricerange_id
+      result = Pricerange.find(pricerange_id).shops
+    end
+
+    if address_id
+      result = Address.find(address_id).shops
+    end
+
+    result
+
   end
 end

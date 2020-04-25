@@ -5,8 +5,11 @@
     </div> 
     <div class="col-md-12 text-center"> 
       <div class="form-group">
-        <%= form_tag(search_shops_path,:method => 'get') do %>
-          <%= text_field_tag :search, "", placeholder:"店舗名を入力" %>
+        <%= form_with url:search_shops_path, method: :get, local: true do |f| %>
+          <%= f.text_field :name, placeholder:"店舗名を入力" %>
+          <%= f.collection_select :genre_id, Genre.all, :id, :name, :prompt => "料理ジャンルで検索", class:"form-control"%>
+          <%= f.collection_select :pricerange_id, Pricerange.all, :id, :price, :prompt => "平均単価で検索", class:"form-control"%>
+          <%= f.collection_select :address_id, Address.all, :id, :prefectures, :prompt => "地域で検索", class:"form-control"%>
           <%= submit_tag '検索', :name => nil %>
         <% end %>
       </div>
