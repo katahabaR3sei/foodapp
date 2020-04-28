@@ -14,7 +14,7 @@ class Shop < ApplicationRecord
 
   def self.search(shop_params)
     if shop_params
-      Shop.where(["name LIKE ? OR genre_id = ? OR pricerange_id = ? OR address_id = ?", "%#{shop_params[0]}%",shop_params[1],shop_params[2],shop_params[3]])
+      Shop.where("name LIKE ? AND genre_id = ? AND pricerange_id = ? AND address_id = ?", "%#{shop_params[0]}%",shop_params[1].to_i,shop_params[2].to_i,shop_params[3].to_i)
     else
       Shop.all.order(id: "asc") 
     end
