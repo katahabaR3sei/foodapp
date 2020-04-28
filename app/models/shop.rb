@@ -13,11 +13,12 @@ class Shop < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def self.search(shop_params)
-    if shop_params
-      Shop.where("name LIKE ? AND genre_id = ? AND pricerange_id = ? AND address_id = ?", "%#{shop_params[0]}%",shop_params[1].to_i,shop_params[2].to_i,shop_params[3].to_i)
-    else
-      Shop.all.order(id: "asc") 
-    end
+    shops = Shop.all
+    shops = shops.where("name LIKE ?", "%#{shop_params[0]}%") if shop_params[0].present?
+    shops = shops.where(genre_id: shop_params[1]) if shop_params[1].present?
+    shops = shops.where(pricerange_id: shop_params[2]) if shop_params[2].present?
+    shops = shops.where(address_id: shop_params[3]) if shop_params[3].present?
+    shops.order(id: "asc")
   end
 end
 
