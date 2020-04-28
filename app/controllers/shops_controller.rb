@@ -51,7 +51,8 @@ class ShopsController < ApplicationController
   end
 
   def search
-    @shops = Shop.search(params[:name],params[:genre_id],params[:pricerange_id],params[:address_id])
+    shop_params = [params[:name],params[:genre_id],params[:pricerange_id],params[:address_id]]
+    @shops = Shop.search(shop_params)
     @rate = Post.group(:shop_id).average(:rate)
   end
   

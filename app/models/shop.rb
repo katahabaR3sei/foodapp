@@ -12,9 +12,9 @@ class Shop < ApplicationRecord
   belongs_to :address
   mount_uploader :image, ImageUploader
 
-  def self.search(name,genre_id,pricerange_id,address_id)
-    if name || genre_id || pricerange_id ||address_id
-      Shop.where(["name LIKE ? OR genre_id = ? OR pricerange_id = ? OR address_id = ?", "%#{name}%","#{genre_id}","#{pricerange_id}","#{address_id}"])
+  def self.search(shop_params)
+    if shop_params
+      Shop.where(["name LIKE ? OR genre_id = ? OR pricerange_id = ? OR address_id = ?", "%#{shop_params[0]}%",shop_params[1],shop_params[2],shop_params[3]])
     else
       Shop.all.order(id: "asc") 
     end
