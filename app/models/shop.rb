@@ -8,7 +8,7 @@ class Shop < ApplicationRecord
   belongs_to :user
   belongs_to :genre
   belongs_to :pricerange
-  has_many :posts
+  has_many :posts, dependent: :destroy
   belongs_to :address
   mount_uploader :image, ImageUploader
 
