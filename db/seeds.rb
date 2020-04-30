@@ -18,3 +18,6 @@ CSV.foreach("db/prefectures.csv") do |row|
   Address.create(:prefectures => row[0])
 end
 
+
+
+
