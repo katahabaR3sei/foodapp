@@ -58,3 +58,4 @@ gem 'jquery-rails'
 gem 'bcrypt'
 gem "carrierwave"
 gem 'kaminari'
+gem 'fog'
