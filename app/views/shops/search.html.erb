@@ -16,4 +16,48 @@
     </div>
   </div>
 </div>  
-<%= render "index_search_form" %>
+<div class="container">
+  <% @shops.each do |shop| %>
+    <%= link_to shop_path(shop) do %>
+      <div class="row row-eq-height"> 
+        <div class="col-md-3">
+          <%= image_tag shop.image.url, class:"img-responsive center-block"%>
+        </div>
+        <div class="col-md-9 row-eq-height">
+          <div class="bg-success col-md-4 border" >
+          <p>店舗名</p>
+            <%= shop.name %>
+          </div>
+          <div class="bg-info col-md-4 border">
+          <p>キャッチコピー</p>  
+            <%= shop.title %>
+          </div>  
+          <div class="bg-danger col-md-4 border"> 
+          <p>料理ジャンル</p>   
+            <%= shop.genre.name%>
+          </div>  
+          <div class="bg-success col-md-4 border" >
+          <p>平均単価</p>
+            <%= shop.pricerange.price %>
+          </div>
+          <div class="bg-info col-md-4 border">
+          <p>地域</p>  
+            <%= shop.address.prefectures %>
+          </div>  
+          <div class="bg-danger col-md-4 border"> 
+          <p>クチコミ平均点数</p>
+            <% if @rate[shop.id] == nil %>   
+              ---点
+            <% else %>  
+              <%= @rate[shop.id].round(2) %>点
+            <% end %>  
+          </div>  
+          <div class="col-md-12 bg-warning border">
+          <p>店舗説明</p>
+            <%= shop.description%>
+          </div>
+        </div> 
+      </div> 
+    <% end %>
+  <% end %>           
+</div>
