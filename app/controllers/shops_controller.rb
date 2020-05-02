@@ -14,7 +14,7 @@ class ShopsController < ApplicationController
   end
 
   def index
-    @shops = Shop.all.order(id: "asc")  
+    @shops = Shop.find(Post.group(:shop_id).order('avg(rate) desc').limit(5).pluck(:shop_id))
     @rate = Post.group(:shop_id).average(:rate)
   end
 
