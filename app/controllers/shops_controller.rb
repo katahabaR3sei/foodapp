@@ -19,7 +19,8 @@ class ShopsController < ApplicationController
   end
 
   def show
-    @shop = Shop.find(params[:id])    
+    @shop = Shop.find(params[:id])
+    @posts = @shop.posts.page(params[:page]).per(3)
     @rate = Post.group(:shop_id).average(:rate)
     @count = Post.group(:shop_id).count(:rate)
   end
@@ -52,7 +53,7 @@ class ShopsController < ApplicationController
 
   def search
     shop_params = [params[:name],params[:genre_id],params[:pricerange_id],params[:address_id]]
-    @shops = Shop.search(shop_params)
+    @shops = Shop.search(shop_params).page(params[:page]).per(3)
     @rate = Post.group(:shop_id).average(:rate)
   end
   
