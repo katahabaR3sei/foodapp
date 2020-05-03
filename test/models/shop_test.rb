@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TopicTest < ActiveSupport::TestCase
+class ShopTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

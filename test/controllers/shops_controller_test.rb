@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class TopicsControllerTest < ActionDispatch::IntegrationTest
+class ShopsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get topics_new_url
+    get shops_new_url
     assert_response :success
   end
 
