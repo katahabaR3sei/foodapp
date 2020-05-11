@@ -59,3 +59,4 @@ gem 'bcrypt'
 gem "carrierwave"
 gem 'kaminari'
 gem 'fog'
+gem 'dotenv-rails'
