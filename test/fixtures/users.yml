@@ -4,7 +4,14 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one:  
+  id: 1
+  name: 林祐太朗
+  email: hayashi.yutaro1118@gmail.com
+  sex: 男性
+  age: 30代
+  address_id: 1
+  password_digest: lawn40yuu
 # column: value
 #
 two: {}
