@@ -4,7 +4,7 @@
       <h1 class="text-center">プロフィール</h1>
     </div>  
     <div class="col-md-offset-1 col-md-4">
-      <% if @user.image%>
+      <% if @user.image %>
         <%= image_tag @user.image.url, class:"img-responsive center-block" %>
       <% else %>
         <%= image_tag "noimage.png", class:"img-responsive center-block" %> 

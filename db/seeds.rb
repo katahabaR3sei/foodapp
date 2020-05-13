@@ -18,6 +18,26 @@ CSV.foreach("db/prefectures.csv") do |row|
   Address.create(:prefectures => row[0])
 end
 
-
+10.times do |i|
+  user = User.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password(min_length: 8),
+    age: (20..40).to_a.sample,
+    sex: %w[男性 女性].sample,
+    address_id: (1..47).to_a.sample,
+  )
+  (0..20).to_a.sample.times do |i|
+    Shop.create(
+      name: Faker::Company.name,
+      user_id: user.id,
+      title: Faker::Company.industry,
+      description: Faker::Company.catch_phrase,
+      genre_id: (1..14).to_a.sample,
+      pricerange_id: (1..11).to_a.sample,
+      address_id: (1..47).to_a.sample,
+    )
+  end
+end
 
 
