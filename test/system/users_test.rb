@@ -20,12 +20,12 @@ class UsersTest < ApplicationSystemTestCase
     assert_text("登録が完了しました")
   end
  
-  # test "ログインができる" do
-  #   visit login_path
-  #   fill_in "session[email]", with: "sample@example.com"
-  #   fill_in "session[password]", with: "sample"
-  #   click "ログイン"
-  #   page.save_screenshot "tmp/screenshots/#{Time.now.strftime('%Y%m%d%H%M%S')}.png"
-  #   assert_text("ログインしました")
-  # end
+  test "ログインができる" do
+    visit login_path
+    fill_in "session[email]", with: "sample@example.com"
+    fill_in "session[password]", with: "sample2020"
+    find('input[type="submit"]').click
+    page.save_screenshot "tmp/screenshots/#{Time.now.strftime('%Y%m%d%H%M%S')}.png"
+    assert_text("ログインしました")
+   end
 end
