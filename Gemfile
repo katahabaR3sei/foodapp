@@ -60,3 +60,4 @@ gem "carrierwave"
 gem 'kaminari'
 gem 'fog'
 gem 'dotenv-rails'
+gem 'rails-i18n'

@@ -1,4 +1,5 @@
 <%= form_for @shop do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
   <div class="form-group">
     <%= f.label :"お店の名前", class:"text-white" %>
     <%= f.text_field :name, class:"form-control", placeholder:"お店の名前を入力" %>

@@ -8,7 +8,7 @@ class ShopsController < ApplicationController
     if @shop.save
       redirect_to shops_path, notice:"投稿ありがとうございます！"
     else
-      flash[:alert] = "投稿失敗・・・"
+      flash.now[:alert] = "投稿失敗・・・"
       render :new
     end
   end

@@ -4,6 +4,7 @@ class User < ApplicationRecord
   
   VALID_EMAIL_REGEX = /[a-zA-Z0-9._+]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*/
   validates :email, presence:true,
+                    uniqueness: true,
              format:{with:VALID_EMAIL_REGEX}
 
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}+\z/i
@@ -14,7 +15,6 @@ class User < ApplicationRecord
   validates :age, presence:true 
   validates :address_id, presence:true
   has_secure_password 
-  validates :email, presence: true, uniqueness: true
 
   has_many :shops
   has_many :posts

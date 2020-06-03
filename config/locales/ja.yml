@@ -6,3 +6,30 @@ ja:
       previous: "&lsaquo; 前"
       next: "次 &rsaquo;"
       truncate: "..."
+ja:     
+  activerecord:
+    attributes:
+      shop:
+        name: 店舗名
+        image: 写真
+        title: キャッチコピー
+        genre: 料理ジャンル
+        description: 店舗詳細
+        address: 所在都道府県
+        pricerange: 平均価格帯
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        email: メールアドレス
+        sex: 性別
+        age: 年齢
+        image: 写真
+        address: 都道府県
+        password: パスワード
+        password_confirmation: 確認用パスワード
+
+        
+
+        

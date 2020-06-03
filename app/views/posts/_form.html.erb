@@ -1,4 +1,5 @@
 <%= form_with(model: [@shop, @post]) do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
   <div class="form-group">
     <%= f.label :"タイトル", class:"text-white" %>
     <%= f.text_field :title, class:"form-control", placeholder:"クチコミのタイトルを入力(15文字以内で入力)" %>

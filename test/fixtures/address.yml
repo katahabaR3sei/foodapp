@@ -6,7 +6,7 @@
 #
 one: 
   id: 1
-  prefectures: 東京
+  prefectures: 東京都
 # column: value
 #
 two: {}
