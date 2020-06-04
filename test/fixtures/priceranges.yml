@@ -1,7 +1,10 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  price: 2000
+  price: 1円〜999円
 
 two:
-  price: MyString
+  price: 1000円〜1999円
+
+three:
+  price: 2000円〜2999円
