@@ -9,7 +9,7 @@ class UsersTest < ApplicationSystemTestCase
   test "ユーザー登録ができる" do
     visit new_user_path
     fill_in "user[name]", with: 'sample.name'
-    fill_in "user[email]", with: 'sample@example.com'
+    fill_in "user[email]", with: 'sample2@example.com'
     select '男性', from: "user[sex]"
     select "30代", from: "user[age]"
     find_by_id("user_address_id").click
